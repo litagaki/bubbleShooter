@@ -14,13 +14,16 @@
   <canvas id="game-canvas"></canvas>
   <script src="lib/object.js"></script>
   <script src="lib/bubble.js"></script>
+  <script src="lib/cannon.js"></script>
   <script src="lib/game.js"></script>
   <script src="lib/gameView.js"></script>
   <script>
     var canvasEl = document.getElementById("game-canvas");
+    canvasEl.width = 1500;
+    canvasEl.height = 1500;
     var ctx = canvasEl.getContext("2d");
-    game = new Asteroids.Game();
-    gameView = new Asteroids.GameView(ctx, game);
+    game = new BubbleShooter.Game();
+    gameView = new BubbleShooter.GameView(ctx, game);
     gameView.start();
   </script>
 </body>
