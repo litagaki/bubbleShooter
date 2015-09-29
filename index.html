@@ -22,11 +22,15 @@
   <script>
     var canvasEl = document.getElementById("game-canvas");
     canvasEl.width = 1000;
-    canvasEl.height = 800;
+    canvasEl.height = 750;
     var ctx = canvasEl.getContext("2d");
     game = new BubbleShooter.Game();
     gameView = new BubbleShooter.GameView(ctx, game);
     gameView.start();
   </script>
+  <p>
+    Use the left and right arrow keys to pivot the bubble cannon<br>
+    and the spacebar to shoot
+  </p>
 </body>
 </html>
