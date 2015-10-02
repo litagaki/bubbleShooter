@@ -33,3 +33,19 @@ div.score {
 div.score h3 {
  border: 1px solid #12C20A;
 }
+
+div.outer-modal{
+  display: none;
+};
+
+.active.outer-modal {
+  display: block;
+  background: #404040;
+  opacity: 0.7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
