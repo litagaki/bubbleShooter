@@ -2,17 +2,21 @@
 <html>
   <head>
     <title>BubbleShooter</title>
-
-    <style>
-      html, body, canvas {
-        padding: 0px;
-        margin: 0px;
-      }
-    </style>
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   </head>
   <body>
-  <canvas id="game-canvas"></canvas>
+  <section>
+    <canvas id="game-canvas"></canvas>
+
+    <div class="score">
+      <h2>Score</h2>
+      <h3>0</h3>
+    </div>
+  </section>
+
   <script src="vendor/keymaster.js"></script>
+  <script src="vendor/jquery-1.11.3.min.js"></script>
   <script src="lib/utils.js"></script>
   <script src="lib/object.js"></script>
   <script src="lib/bubble.js"></script>
@@ -21,13 +25,15 @@
   <script src="lib/gameView.js"></script>
   <script>
     var canvasEl = document.getElementById("game-canvas");
-    canvasEl.width = 1000;
+    canvasEl.width = 500;
     canvasEl.height = 750;
     var ctx = canvasEl.getContext("2d");
-    game = new BubbleShooter.Game();
+    var $score = $('div.score').find('h3');
+    game = new BubbleShooter.Game({ $scoreEl: $score });
     gameView = new BubbleShooter.GameView(ctx, game);
     gameView.start();
   </script>
+
   <p>
     Use the left and right arrow keys to pivot the bubble cannon<br>
     and the spacebar to shoot. Try to get at least three in a row<br>
