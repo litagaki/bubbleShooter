@@ -14,10 +14,7 @@
       <h3>0</h3>
     </div>
   </section>
-  <div class="outer-modal active">
-    <div class="game-over">
-      <h2>GAME OVER :(</h2>
-    </div>
+  <div class="outer-modal">
   </div>
   <script src="vendor/keymaster.js"></script>
   <script src="vendor/jquery-1.11.3.min.js"></script>
@@ -35,14 +32,9 @@
     var $score = $('div.score').find('h3');
     var $modal = $('div.outer-modal');
     game = new BubbleShooter.Game({ $scoreEl: $score, $modal: $modal });
-    gameView = new BubbleShooter.GameView(ctx, game);
+    gameView = new BubbleShooter.GameView({ ctx:ctx, game:game, $modal: $modal });
     gameView.start();
   </script>
 
-  <p>
-    Use the left and right arrow keys to pivot the bubble cannon<br>
-    and the spacebar to shoot. Try to get at least three in a row<br>
-    of the same color bubbles.
-  </p>
 </body>
 </html>
