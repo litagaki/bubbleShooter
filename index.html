@@ -31,7 +31,7 @@
     var ctx = canvasEl.getContext("2d");
     var $score = $('div.score').find('h3');
     var $modal = $('div.outer-modal');
-    game = new BubbleShooter.Game({ $scoreEl: $score, $modal: $modal });
+    game = new BubbleShooter.Game({ $scoreEl: $score});
     gameView = new BubbleShooter.GameView({ ctx:ctx, game:game, $modal: $modal });
     gameView.start();
   </script>
